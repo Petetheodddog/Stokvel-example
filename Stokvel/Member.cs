@@ -7,6 +7,7 @@ namespace StokvelNamespace {
         public Member(string name, IStokvel stokvel) {
             Name = name;
             this.stokvel = stokvel;
+            stokvel.AddMember(this);
         }
         public void Contribute() {
             stokvel.Contribute(this);
