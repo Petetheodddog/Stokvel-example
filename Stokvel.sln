@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stokvel", "Stokvel\Stokvel.csproj", "{78C1DC65-D2B0-42FF-B438-225DD4BC880C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stokvel.Tests", "Stokvel.Tests\Stokvel.Tests.csproj", "{1D79EA29-E41A-4085-962C-68E50EEE7F4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{78C1DC65-D2B0-42FF-B438-225DD4BC880C}.Release|x64.Build.0 = Release|Any CPU
 		{78C1DC65-D2B0-42FF-B438-225DD4BC880C}.Release|x86.ActiveCfg = Release|Any CPU
 		{78C1DC65-D2B0-42FF-B438-225DD4BC880C}.Release|x86.Build.0 = Release|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Debug|x64.Build.0 = Debug|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Release|x64.ActiveCfg = Release|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Release|x64.Build.0 = Release|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D79EA29-E41A-4085-962C-68E50EEE7F4D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
