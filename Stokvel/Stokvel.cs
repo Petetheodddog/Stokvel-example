@@ -33,7 +33,7 @@ namespace StokvelNamespace {
                 members[nextTurnForPayout].PayOut(Funds);
                 Funds = 0;
             }
-            foreach (Member m in Members) {
+            foreach (IMember m in Members) {
                 m.Contribute();
             }
         }
