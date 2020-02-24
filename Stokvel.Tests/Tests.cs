@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using StokvelNamespace;
+using NSubstitute;
 
 namespace StokvelNamespace.Tests
 {
@@ -20,18 +21,21 @@ namespace StokvelNamespace.Tests
         public void CheckThatPayoutsOccurCorrectly() {
             // ARRANGE
             IStokvel s = new Stokvel(4, 1000);
-            IMember a = new Member("Adam", s);
-            IMember b = new Member("Bob", s);
-            IMember c = new Member("Chloe", s);
+            IMember a = Substitute.For<IMember>();
+            s.AddMember(a);
+            IMember b = Substitute.For<IMember>();
+            s.AddMember(b);
+            IMember c = Substitute.For<IMember>();
+            s.AddMember(c);
             // ACT
             s.NextMeeting();
             s.NextMeeting();
             s.NextMeeting();
             s.NextMeeting();
             // ASSERT
-            Assert.That(a.Withdrawn, Is.EqualTo(9000));
-            Assert.That(b.Withdrawn, Is.EqualTo(0));
-            Assert.That(c.Withdrawn, Is.EqualTo(0));
+            a.Received(1).PayOut(Arg.Any<int>());
+            b.DidNotReceive().PayOut(Arg.Any<int>());
+            c.DidNotReceive().PayOut(Arg.Any<int>());
         }
 
         [Test]
