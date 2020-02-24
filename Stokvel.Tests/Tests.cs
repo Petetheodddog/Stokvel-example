@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using StokvelNamespace;
 using NSubstitute;
+using Moq;
 
 namespace StokvelNamespace.Tests
 {
@@ -36,6 +37,27 @@ namespace StokvelNamespace.Tests
             a.Received(1).PayOut(Arg.Any<int>());
             b.DidNotReceive().PayOut(Arg.Any<int>());
             c.DidNotReceive().PayOut(Arg.Any<int>());
+        }
+
+        [Test]
+        public void CheckThatPayoutsOccurCorrectly_Version2() {
+            // ARRANGE
+            IStokvel s = new Stokvel(4, 1000);
+            Mock<IMember> a = new Mock<IMember>();
+            s.AddMember(a.Object);
+            Mock<IMember> b = new Mock<IMember>();
+            s.AddMember(b.Object);
+            Mock<IMember> c = new Mock<IMember>();
+            s.AddMember(c.Object);
+            // ACT
+            s.NextMeeting();
+            s.NextMeeting();
+            s.NextMeeting();
+            s.NextMeeting();
+            // ASSERT
+            a.Verify(x => x.PayOut(It.IsAny<int>()), Times.Once());
+            b.Verify(x => x.PayOut(It.IsAny<int>()), Times.Never());
+            c.Verify(x => x.PayOut(It.IsAny<int>()), Times.Never());
         }
 
         [Test]
